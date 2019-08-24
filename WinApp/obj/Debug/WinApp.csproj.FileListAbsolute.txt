@@ -10,3 +10,4 @@ C:\Users\Max\source\repos\PrimeraApp2019_2\WinApp\obj\Debug\WinApp.exe
 C:\Users\Max\source\repos\PrimeraApp2019_2\WinApp\obj\Debug\WinApp.pdb
 C:\Users\Max\source\repos\PrimeraApp2019_2\WinApp\obj\Debug\WinApp.csprojAssemblyReference.cache
 C:\Users\Max\source\repos\PrimeraApp2019_2\WinApp\obj\Debug\WinApp.frmPrincipal.resources
+C:\Users\Max\source\repos\PrimeraApp2019_2\WinApp\obj\Debug\WinApp.frmEjemplosClases.resources

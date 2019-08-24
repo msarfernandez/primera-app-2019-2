@@ -31,5 +31,11 @@ namespace WinApp
             excepciones.Show();
             
         }
+
+        private void toolStripButton3_Click(object sender, EventArgs e)
+        {
+            frmEjemplosClases ventana = new frmEjemplosClases();
+            ventana.Show();
+        }
     }
 }
