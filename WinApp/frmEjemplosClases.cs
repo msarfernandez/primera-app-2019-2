@@ -21,7 +21,9 @@ namespace WinApp
         {
             try
             {
-                Alumno alu;
+                //Alumno alu;
+                Mascota prueba8;
+                prueba8 = new Gato();
                 Mascota m1 = new Mascota();
                 m1.Color = "Rojo";
                 // MessageBox.Show("La mascota dice: " + m1.comunicarse());
@@ -54,6 +56,10 @@ namespace WinApp
                     MessageBox.Show(mascota.comunicarse());
                 }
 
+                for (int i = 0; i < listaMascotas.Count -1; i++)
+                {
+                    var mascota = listaMascotas[i];
+                }
                 
 
             }
@@ -61,6 +67,18 @@ namespace WinApp
             {
                 MessageBox.Show(ex.ToString());
             }
+        }
+
+        Mascota buscar(List<Mascota> lista, string color)
+        {
+            foreach (Mascota item in lista)
+            {
+                if(item.Color == color || color == "Rojo")
+                {
+                    return item;
+                }
+            }
+                    return new Mascota();
         }
     }
 }
