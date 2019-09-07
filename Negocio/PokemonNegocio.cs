@@ -1,0 +1,97 @@
+﻿using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+using Dominio;
+using System.Data.SqlClient;
+
+namespace Negocio
+{
+    public class PokemonNegocio
+    {
+        public List<Pokemon> listar()
+        {
+            List<Pokemon> lista = new List<Pokemon>();
+            Pokemon aux;
+
+            SqlCommand comando = new SqlCommand();
+            SqlConnection conexion = new SqlConnection();
+            SqlDataReader lector;
+
+            try
+            {
+                conexion.ConnectionString = "data source=MAX-PC\\SQLEXPRESS; initial catalog=POKEDEX_DB; integrated security=sspi";
+                comando.CommandType = System.Data.CommandType.Text;
+                //comando.CommandText = "select p.id, p.Nombre, p.Descripcion PokeDesc, t.Id idTipo, t.Descripcion from POKEMONES p, TIPOS t where p.IdTipo = t.Id";
+                // comando.CommandText = "select p.id, p.Nombre, p.Descripcion PokeDesc, t.Id idTipo, t.Descripcion, e.id idEvol,e.Nombre nomEvol from POKEMONES p, TIPOS t, POKEMONES E where p.IdTipo = t.Id and p.IdEvolucion = E.Id";
+                comando.CommandText = "select p.id, p.Nombre, p.Descripcion PokeDesc, t.Id idTipo, t.Descripcion, e.id idEvol,e.Nombre nomEvol from POKEMONES p inner join TIPOS t on p.IdTipo = t.Id left join POKEMONES E on p.IdEvolucion = E.Id";
+                comando.Connection = conexion;
+
+                conexion.Open();
+                lector = comando.ExecuteReader();
+
+                while (lector.Read())
+                {
+                    aux = new Pokemon();
+                    aux.Id = lector.GetInt32(0);
+                    aux.Nombre = lector.GetString(1); // lector["Nombre"].ToString();
+                    aux.Descripcion = lector.GetString(2); //lector["PokeDesc"].ToString();
+                    aux.Tipo = new Tipo();
+                    aux.Tipo.Id = (int)lector["idTipo"];
+                    aux.Tipo.Descripcion = (string)lector["Descripcion"];
+                    if (!Convert.IsDBNull(lector["idEvol"]))
+                    {
+                        aux.Evolucion = new Pokemon();
+                        aux.Evolucion.Id = (int)lector["idEvol"];
+                        aux.Evolucion.Nombre = lector["nomEvol"].ToString();
+                    }
+                   
+                    lista.Add(aux);
+                }
+
+                return lista;
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+            finally
+            {
+                conexion.Close();
+            }
+
+        }
+
+        public void agregar(Pokemon pokemon)
+        {
+            SqlCommand comando = new SqlCommand();
+            SqlConnection conexion = new SqlConnection();
+
+            try
+            {
+                conexion.ConnectionString = "data source=MAX-PC\\SQLEXPRESS; initial catalog=POKEDEX_DB; integrated security=sspi";
+                comando.CommandType = System.Data.CommandType.Text;
+                comando.Connection = conexion;
+                comando.CommandText = "Insert into POKEMONES values ('" + pokemon.Nombre + "', @idTipo, @idEvolucion, @Desc)";
+                comando.Parameters.Clear();
+                comando.Parameters.AddWithValue("@idTipo", pokemon.Tipo.Id);
+                comando.Parameters.AddWithValue("@idEvolucion", pokemon.Evolucion.Id);
+                comando.Parameters.AddWithValue("@Desc", pokemon.Descripcion);
+
+                comando.Connection = conexion;
+                conexion.Open();
+                comando.ExecuteNonQuery();
+                
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+            finally
+            {
+                conexion.Close();
+            }
+        }
+    }
+}

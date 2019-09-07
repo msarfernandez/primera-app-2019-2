@@ -1,0 +1,9 @@
+C:\Users\Max\source\repos\PrimeraApp2019_2\Negocio\bin\Debug\Negocio.dll
+C:\Users\Max\source\repos\PrimeraApp2019_2\Negocio\bin\Debug\Negocio.pdb
+C:\Users\Max\source\repos\PrimeraApp2019_2\Negocio\bin\Debug\Dominio.dll
+C:\Users\Max\source\repos\PrimeraApp2019_2\Negocio\bin\Debug\Dominio.pdb
+C:\Users\Max\source\repos\PrimeraApp2019_2\Negocio\obj\Debug\Negocio.csprojAssemblyReference.cache
+C:\Users\Max\source\repos\PrimeraApp2019_2\Negocio\obj\Debug\Negocio.csproj.CoreCompileInputs.cache
+C:\Users\Max\source\repos\PrimeraApp2019_2\Negocio\obj\Debug\Negocio.csproj.CopyComplete
+C:\Users\Max\source\repos\PrimeraApp2019_2\Negocio\obj\Debug\Negocio.dll
+C:\Users\Max\source\repos\PrimeraApp2019_2\Negocio\obj\Debug\Negocio.pdb

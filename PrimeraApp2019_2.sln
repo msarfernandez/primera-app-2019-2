@@ -9,6 +9,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Dominio", "Dominio\Dominio.
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Negocio", "Negocio\Negocio.csproj", "{740B1BF7-C019-4721-A735-BC72C4E28C89}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PokedexDesktop", "PokedexDesktop\PokedexDesktop.csproj", "{8CE23ECA-23BE-45B6-A9E1-BBAF5A42D7E0}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -27,6 +29,10 @@ Global
 		{740B1BF7-C019-4721-A735-BC72C4E28C89}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{740B1BF7-C019-4721-A735-BC72C4E28C89}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{740B1BF7-C019-4721-A735-BC72C4E28C89}.Release|Any CPU.Build.0 = Release|Any CPU
+		{8CE23ECA-23BE-45B6-A9E1-BBAF5A42D7E0}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{8CE23ECA-23BE-45B6-A9E1-BBAF5A42D7E0}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{8CE23ECA-23BE-45B6-A9E1-BBAF5A42D7E0}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{8CE23ECA-23BE-45B6-A9E1-BBAF5A42D7E0}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
