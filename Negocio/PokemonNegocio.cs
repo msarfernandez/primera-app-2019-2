@@ -63,6 +63,20 @@ namespace Negocio
 
         }
 
+        public void eliminar(int id)
+        {
+            AccesoDatos datos = new AccesoDatos();
+            try
+            {
+                datos.setearQuery("delete from POKEMONES where id =" + id);
+                datos.ejecutarAccion();
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+        }
+
         public void agregar(Pokemon pokemon)
         {
             SqlCommand comando = new SqlCommand();
@@ -92,6 +106,66 @@ namespace Negocio
             {
                 conexion.Close();
             }
+        }
+
+        public void modificar(Pokemon pokemon)
+        {
+            AccesoDatos datos = new AccesoDatos();
+            try
+            {
+                datos.setearQuery("Update POKEMONES set Nombre=@Nombre Where Id=@Id");
+                datos.agregarParametro("@Nombre", pokemon.Nombre);
+                datos.agregarParametro("@Id", pokemon.Id);
+
+                datos.ejecutarAccion();
+
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+        }
+
+        public List<Pokemon> listar2()
+        {
+            List<Pokemon> lista = new List<Pokemon>();
+            Pokemon aux;
+            AccesoDatos datos = new AccesoDatos();
+            try
+            {
+                datos.setearQuery("select p.id, p.Nombre, p.Descripcion PokeDesc, t.Id idTipo, t.Descripcion, e.id idEvol,e.Nombre nomEvol from POKEMONES p inner join TIPOS t on p.IdTipo = t.Id left join POKEMONES E on p.IdEvolucion = E.Id");
+                datos.ejecutarLector();
+                while (datos.lector.Read())
+                {
+                    aux = new Pokemon();
+                    aux.Id = datos.lector.GetInt32(0);
+                    aux.Nombre = datos.lector.GetString(1);
+                    aux.Descripcion = datos.lector.GetString(2);
+                    aux.Tipo = new Tipo();
+                    aux.Tipo.Id = (int)datos.lector["idTipo"];
+                    aux.Tipo.Descripcion = (string)datos.lector["Descripcion"];
+                    if (!Convert.IsDBNull(datos.lector["idEvol"]))
+                    {
+                        aux.Evolucion = new Pokemon();
+                        aux.Evolucion.Id = (int)datos.lector["idEvol"];
+                        aux.Evolucion.Nombre = datos.lector["nomEvol"].ToString();
+                    }
+
+                    lista.Add(aux);
+                }
+
+                return lista;
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+            finally
+            {
+                datos.cerrarConexion();
+                datos = null;
+            }
+
         }
     }
 }

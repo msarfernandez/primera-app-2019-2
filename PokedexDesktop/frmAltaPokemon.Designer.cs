@@ -92,6 +92,7 @@
             // 
             // cboTipo
             // 
+            this.cboTipo.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cboTipo.FormattingEnabled = true;
             this.cboTipo.Location = new System.Drawing.Point(99, 82);
             this.cboTipo.Name = "cboTipo";
@@ -100,6 +101,7 @@
             // 
             // cboEvolucion
             // 
+            this.cboEvolucion.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cboEvolucion.FormattingEnabled = true;
             this.cboEvolucion.Location = new System.Drawing.Point(99, 109);
             this.cboEvolucion.Name = "cboEvolucion";

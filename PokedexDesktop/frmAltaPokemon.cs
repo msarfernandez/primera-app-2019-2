@@ -15,9 +15,17 @@ namespace PokedexDesktop
 {
     public partial class frmAltaPokemon : Form
     {
+        private Pokemon pokemon = null;
+
         public frmAltaPokemon()
         {
             InitializeComponent();
+        }
+
+        public frmAltaPokemon(Pokemon pokemon)
+        {
+            InitializeComponent();
+            this.pokemon = pokemon;
         }
 
         private void frmAltaPokemon_Load(object sender, EventArgs e)
@@ -27,7 +35,27 @@ namespace PokedexDesktop
             try
             {
                 cboEvolucion.DataSource = negocio.listar();
+                cboEvolucion.ValueMember = "Id";
+                cboEvolucion.DisplayMember = "Nombre";
+                cboEvolucion.SelectedIndex = -1;
+
                 cboTipo.DataSource = tipoNegocio.listar();
+                cboTipo.ValueMember = "Id";
+                cboTipo.DisplayMember = "Descripcion";
+                cboTipo.SelectedIndex = -1;
+
+                if(pokemon != null)
+                {
+                    Text = "Modificar";
+                    txtNombre.Text = pokemon.Nombre;
+                    txtDesc.Text = pokemon.Descripcion;
+                    if (pokemon.Evolucion != null)
+                        cboEvolucion.SelectedValue = pokemon.Evolucion.Id;
+
+                    cboTipo.SelectedValue = pokemon.Tipo.Id;
+                }
+
+
             }
             catch (Exception ex)
             {
@@ -43,15 +71,27 @@ namespace PokedexDesktop
         private void btnAceptar_Click(object sender, EventArgs e)
         {
             PokemonNegocio pokemonNegocio = new PokemonNegocio();
-            Pokemon pokemon = new Pokemon();
+
+            // lo comento porque puede venir de afuera... y es un atributo del form
+            //Pokemon pokemon = new Pokemon();
             try
             {
+                if (pokemon == null)
+                    pokemon = new Pokemon();
+
                 pokemon.Nombre = txtNombre.Text;
                 pokemon.Descripcion = txtDesc.Text;
                 pokemon.Tipo = (Tipo)cboTipo.SelectedItem;
                 pokemon.Evolucion = (Pokemon)cboEvolucion.SelectedItem;
 
-                pokemonNegocio.agregar(pokemon);
+                // pokemon.Evolucion = new Pokemon();
+                // pokemon.Evolucion.Id = (int)cboEvolucion.SelectedValue;
+
+                if(pokemon.Id != 0)
+                    pokemonNegocio.modificar(pokemon);
+                else
+                    pokemonNegocio.agregar(pokemon);
+
                 Dispose();
                 
             }
