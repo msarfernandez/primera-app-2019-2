@@ -16,7 +16,9 @@ namespace PokedexWebDesdeCero
 
         protected void btnAceptar_Click(object sender, EventArgs e)
         {
-
+            Page.Validate();
+            if (!Page.IsValid)
+                return;
         }
     }
 }
