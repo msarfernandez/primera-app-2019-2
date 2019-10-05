@@ -19,8 +19,11 @@ namespace PokedexWebDesdeCero
             try
             {
                 listaPokemon = negocio.listar();
-                int numeroPokemon = Convert.ToInt32(Session["NumeroPokemon" + Session.SessionID]);
-                pokemon = listaPokemon.Find(J => J.Id == numeroPokemon);
+                //
+                // int numeroPokemon = Convert.ToInt32(Session["NumeroPokemon" + Session.SessionID]);
+                var pokeSeleccionado = Convert.ToInt32(Request.QueryString["idpkm"]);
+                pokemon = listaPokemon.Find(J => J.Id == pokeSeleccionado);
+
 
             }
             catch (Exception ex)

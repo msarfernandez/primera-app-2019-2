@@ -17,6 +17,7 @@
                 <h5 class="card-title"><% = item.Nombre %></h5>
                 <p class="card-text"><% = item.Descripcion %></p>
             </div>
+            <a class="btn btn-primary" href="PokemonDetail.aspx?idpkm=<% = item.Id.ToString() %>">Seleccionar</a>
         </div>
         <% } %>
     </div>
