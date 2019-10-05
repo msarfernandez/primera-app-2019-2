@@ -68,9 +68,13 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="Default.aspx" />
+    <Content Include="Error.aspx" />
+    <Content Include="FormularioPokemon2.aspx" />
     <Content Include="Global.asax" />
     <Content Include="Index.aspx" />
     <Content Include="ListaPokemon.aspx" />
+    <Content Include="PokemonDetail.aspx" />
+    <Content Include="PokemonForm.aspx" />
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
@@ -80,6 +84,20 @@
     </Compile>
     <Compile Include="Default.aspx.designer.cs">
       <DependentUpon>Default.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Error.aspx.cs">
+      <DependentUpon>Error.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Error.aspx.designer.cs">
+      <DependentUpon>Error.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="FormularioPokemon2.aspx.cs">
+      <DependentUpon>FormularioPokemon2.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="FormularioPokemon2.aspx.designer.cs">
+      <DependentUpon>FormularioPokemon2.aspx</DependentUpon>
     </Compile>
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
@@ -97,6 +115,20 @@
     </Compile>
     <Compile Include="ListaPokemon.aspx.designer.cs">
       <DependentUpon>ListaPokemon.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="PokemonDetail.aspx.cs">
+      <DependentUpon>PokemonDetail.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="PokemonDetail.aspx.designer.cs">
+      <DependentUpon>PokemonDetail.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="PokemonForm.aspx.cs">
+      <DependentUpon>PokemonForm.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="PokemonForm.aspx.designer.cs">
+      <DependentUpon>PokemonForm.aspx</DependentUpon>
     </Compile>
     <Compile Include="Principal.Master.cs">
       <DependentUpon>Principal.Master</DependentUpon>

@@ -13,30 +13,21 @@ namespace PokedexWebDesdeCero {
     public partial class ListaPokemon {
         
         /// <summary>
-        /// txtTextbox control.
+        /// txtNumeroPokemon control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txtTextbox;
+        protected global::System.Web.UI.WebControls.TextBox txtNumeroPokemon;
         
         /// <summary>
-        /// dgvPokemones control.
+        /// cboPokemons control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.GridView dgvPokemones;
-        
-        /// <summary>
-        /// txtNavegar control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Button txtNavegar;
+        protected global::System.Web.UI.WebControls.DropDownList cboPokemons;
     }
 }

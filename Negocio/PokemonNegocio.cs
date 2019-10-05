@@ -25,7 +25,7 @@ namespace Negocio
                 comando.CommandType = System.Data.CommandType.Text;
                 //comando.CommandText = "select p.id, p.Nombre, p.Descripcion PokeDesc, t.Id idTipo, t.Descripcion from POKEMONES p, TIPOS t where p.IdTipo = t.Id";
                 // comando.CommandText = "select p.id, p.Nombre, p.Descripcion PokeDesc, t.Id idTipo, t.Descripcion, e.id idEvol,e.Nombre nomEvol from POKEMONES p, TIPOS t, POKEMONES E where p.IdTipo = t.Id and p.IdEvolucion = E.Id";
-                comando.CommandText = "select p.id, p.Nombre, p.Descripcion PokeDesc, t.Id idTipo, t.Descripcion, e.id idEvol,e.Nombre nomEvol from POKEMONES p inner join TIPOS t on p.IdTipo = t.Id left join POKEMONES E on p.IdEvolucion = E.Id";
+                comando.CommandText = "select p.id, p.Nombre, p.Descripcion PokeDesc, t.Id idTipo, t.Descripcion, e.id idEvol,e.Nombre nomEvol, p.UrlImagen from POKEMONES p inner join TIPOS t on p.IdTipo = t.Id left join POKEMONES E on p.IdEvolucion = E.Id";
                 comando.Connection = conexion;
 
                 conexion.Open();
@@ -46,6 +46,7 @@ namespace Negocio
                         aux.Evolucion.Id = (int)lector["idEvol"];
                         aux.Evolucion.Nombre = lector["nomEvol"].ToString();
                     }
+                    aux.UrlImagen = (string)lector["UrlImagen"];
                    
                     lista.Add(aux);
                 }

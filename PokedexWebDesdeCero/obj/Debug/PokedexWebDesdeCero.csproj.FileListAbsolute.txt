@@ -49,7 +49,6 @@ C:\Users\Max\source\repos\PrimeraApp2019_2\PokedexWebDesdeCero\bin\roslyn\VBCSCo
 C:\Users\Max\source\repos\PrimeraApp2019_2\PokedexWebDesdeCero\bin\roslyn\VBCSCompiler.exe.config
 C:\Users\Max\source\repos\PrimeraApp2019_2\PokedexWebDesdeCero\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll
 C:\Users\Max\source\repos\PrimeraApp2019_2\PokedexWebDesdeCero\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.xml
-C:\Users\Max\source\repos\PrimeraApp2019_2\PokedexWebDesdeCero\obj\Debug\PokedexWebDesdeCero.csprojAssemblyReference.cache
 C:\Users\Max\source\repos\PrimeraApp2019_2\PokedexWebDesdeCero\obj\Debug\PokedexWebDesdeCero.csproj.CoreCompileInputs.cache
 C:\Users\Max\source\repos\PrimeraApp2019_2\PokedexWebDesdeCero\obj\Debug\PokedexWebDesdeCero.csproj.CopyComplete
 C:\Users\Max\source\repos\PrimeraApp2019_2\PokedexWebDesdeCero\obj\Debug\PokedexWebDesdeCero.dll
@@ -58,3 +57,4 @@ C:\Users\Max\source\repos\PrimeraApp2019_2\PokedexWebDesdeCero\bin\Dominio.dll
 C:\Users\Max\source\repos\PrimeraApp2019_2\PokedexWebDesdeCero\bin\Negocio.dll
 C:\Users\Max\source\repos\PrimeraApp2019_2\PokedexWebDesdeCero\bin\Dominio.pdb
 C:\Users\Max\source\repos\PrimeraApp2019_2\PokedexWebDesdeCero\bin\Negocio.pdb
+C:\Users\Max\source\repos\PrimeraApp2019_2\PokedexWebDesdeCero\obj\Debug\PokedexWebDesdeCero.csprojAssemblyReference.cache

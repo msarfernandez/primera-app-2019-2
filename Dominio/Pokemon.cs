@@ -13,6 +13,7 @@ namespace Dominio
         public string Descripcion { get; set; }
         public Tipo Tipo { get; set; }
         public Pokemon Evolucion { get; set; }
+        public string UrlImagen { get; set; }
 
         //public Pokemon()
         //{

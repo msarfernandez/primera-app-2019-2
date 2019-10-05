@@ -24,8 +24,8 @@
                 <li class="nav-item active">
                     <a class="nav-link" href="ListaPokemon.aspx">Listado Pokemons <span class="sr-only">(current)</span></a>
                 </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="#">Coming Soon</a>
+                <li class="nav-item active">
+                    <a class="nav-link" href="PokemonForm.aspx">Formulario Pokemon</a>
                 </li>
                 <li class="nav-item">
                     <a class="nav-link" href="#">Coming Soon</a>
