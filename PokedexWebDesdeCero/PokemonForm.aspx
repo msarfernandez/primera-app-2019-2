@@ -8,15 +8,34 @@
 
         function validar() {
             var descripcion = document.getElementById("txtDescripcion").value;
-            console.log(descripcion);
             var nombre = document.getElementById("<% = txtNombre.ClientID %>").value;
             var evoluciona = $("#<%= chkEvolucion.ClientID %>").is(":checked");
-            console.log(evoluciona);
+            var valido = true;
 
-            if (descripcion === "" || nombre === "") {
-                alert("Debes completar los campos");
+            if (descripcion === "") {
+                //alert("Debes completar los campos");
+                $("#txtDescripcion").removeClass("is-valid");
+                $("#txtDescripcion").addClass("is-invalid");
+                valido = false;
+            }
+            else {
+                $("#txtDescripcion").removeClass("is-invalid");
+                $("#txtDescripcion").addClass("is-valid");
+            }
+            if (nombre === "") {
+                $("#<% = txtNombre.ClientID %>").removeClass("is-valid");
+                $("#<% = txtNombre.ClientID %>").addClass("is-invalid");
+                valido = false;
+            }
+            else {
+                $("#<% = txtNombre.ClientID %>").removeClass("is-invalid");
+                $("#<% = txtNombre.ClientID %>").addClass("is-valid");
+            }
+
+            if (!valido) {
                 return false;
             }
+
             if (evoluciona) {
                 alert("El pokemon evoluciona");
             }
@@ -35,12 +54,13 @@
             <label>Descripcion</label>
             <asp:TextBox ID="txtDescripcion" MaxLength="20" ClientIDMode="Static" CssClass="form-control" runat="server" />
             <asp:RangeValidator ErrorMessage="El valor es incorrecto" MaximumValue="20" MinimumValue="0" ControlToValidate="txtDescripcion" runat="server" />
+            
         </div>
         <div class="form-group form-check">
             <asp:CheckBox ID="chkEvolucion" Text="Tiene Evolución" runat="server" />
             <%--<label class="form-check-label" for="exampleCheck1">Check me out</label>--%>
         </div>
-    <asp:Button Text="Aceptar" ID="btnAceptar" autopostback="false" OnClientClick="return validar()" OnClick="btnAceptar_Click" CssClass="btn btn-primary" runat="server" />
+    <asp:Button Text="Aceptar" ID="btnAceptar" OnClientClick="return validar()" OnClick="btnAceptar_Click" CssClass="btn btn-primary" runat="server" />
 
 
 </asp:Content>
