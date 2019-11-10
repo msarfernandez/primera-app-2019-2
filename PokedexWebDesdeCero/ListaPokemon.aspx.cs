@@ -31,6 +31,10 @@ namespace PokedexWebDesdeCero
                     cboPokemons.Items.Add("Rojo");
                     cboPokemons.Items.Add("Azul");
                     cboPokemons.Items.Add("Verde");
+
+                    //esto es lo que necesitamos para el repeater.
+                    repetidor.DataSource = listaPokemons;
+                    repetidor.DataBind();
                 }
 
             }
@@ -77,6 +81,18 @@ namespace PokedexWebDesdeCero
                 Session["Error" + Session.SessionID] = "El pokemon debe ser menor o igual a 151";
                 Response.Redirect("Error.aspx");
             }
+        }
+
+        protected void btnArgumento_Click(object sender, EventArgs e)
+        {
+            // recibimos un argumento desde un asp button a partir de su propiedad CommandArgument.
+            // nota: esto por alguna razón no funciona normalmente con un foreach en el front, para ello
+            // usamos un repeater para crear cada card de Pokemon y cambia un poco la forma de mapear cada parámetro del objeto a 
+            // cada card.
+            // lo primero es tener en el load la lista linkeada al repeater, que en este caso se llama "repetidor".
+            // El repeater es un simple tag que va en el aspx y dentro del mismo tiene un itemtemplate en el cual
+            // se escribe lo que queremos que se repita. 
+            var argument = ((Button)sender).CommandArgument;
         }
     }
 }

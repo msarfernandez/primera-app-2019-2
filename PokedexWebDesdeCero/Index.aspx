@@ -8,6 +8,7 @@
 
     <h1>INDEX</h1>
 
-    <img src="<% "https://assets.pokemon.com/assets//cms2-es-es/img/misc/_tiles/generic/pokemon-169-m.jpg" %>"" alt="Alternate Text" />
+    <%--<img src="<% "https://assets.pokemon.com/assets//cms2-es-es/img/misc/_tiles/generic/pokemon-169-m.jpg" %>"" alt="Alternate Text" />--%>
+    <a href="ListaPokemon.aspx">Listado de Pokemons</a>
 
 </asp:Content>

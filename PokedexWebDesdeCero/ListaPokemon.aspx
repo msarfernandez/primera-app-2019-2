@@ -4,12 +4,15 @@
 
     <h1>Lista Pokemons</h1>
 
-    <asp:TextBox runat="server" AutoPostBack="true" Id="txtNumeroPokemon" OnTextChanged="txtNumeroPokemon_TextChanged" />
+    <asp:TextBox runat="server" AutoPostBack="true" ID="txtNumeroPokemon" OnTextChanged="txtNumeroPokemon_TextChanged" />
     <asp:DropDownList runat="server" ID="cboPokemons" />
 
     <div class="card-columns" style="margin-left: 10px; margin-right: 10px;">
 
-        <% foreach (var item in listaPokemons)
+        <%-- ESTO funciona perfecto, pero lo cambiamos por el repeater para poder usar el 
+            pasaje de parámetros con el CommandArgument de un botón (el PRUEBA), ya que de ESTE modo, 
+            no toma el valor. --%>
+        <%--        <% foreach (var item in listaPokemons)
             { %>
         <div class="card">
             <img src="<% = item.UrlImagen %>" class="card-img-top" alt="...">
@@ -18,8 +21,28 @@
                 <p class="card-text"><% = item.Descripcion %></p>
             </div>
             <a class="btn btn-primary" href="PokemonDetail.aspx?idpkm=<% = item.Id.ToString() %>">Seleccionar</a>
+            <asp:Button Text="Prueba" CommandArgument='<%#"item.Id"%>' CommandName="idPokemon" runat="server" OnClick="Unnamed1_Click" />
         </div>
-        <% } %>
+        <% } %>--%>
+
+        <%-- Esto reemplaza el foreach. Vean que cambia la forma de pasar el argumento a cada tag.
+            En este caso se usa el numeral (#) y la función Eval que recibe por parámetro como string
+            el nombre de la property de tu objeto. El repeater va a iterar lo que esté dentro de la colección
+             que le asignamos en el LOAD. Se lo asignamos directamente por ID, en este caso, repetidor.--%>
+        <asp:Repeater runat="server" ID="repetidor">
+            <ItemTemplate>
+                <div class="card">
+                    <img src="<%#Eval("UrlImagen") %>" class="card-img-top" alt="...">
+                    <div class="card-body">
+                        <h5 class="card-title"><%#Eval("Nombre")%></h5>
+                        <p class="card-text"><%#Eval("Descripcion")%></p>
+                    </div>
+                    <a class="btn btn-primary" href="PokemonDetail.aspx?idpkm=<%#Eval("Id")%>">Seleccionar</a>
+                    <asp:Button ID="btnArgumento" CssClass="btn btn-primary" Text="Argumento to Back" CommandArgument='<%#Eval("Id")%>' CommandName="idPokemon" runat="server" OnClick="btnArgumento_Click" />
+                </div>
+            </ItemTemplate>
+        </asp:Repeater>
+
     </div>
 
     <%--<asp:TextBox runat="server" ID="txtTextbox" />--%>
