@@ -11,5 +11,32 @@ namespace PokedexWebDesdeCero {
     
     
     public partial class Default {
+        
+        /// <summary>
+        /// ddlPokemon control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.DropDownList ddlPokemon;
+        
+        /// <summary>
+        /// btnSeleccionar control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Button btnSeleccionar;
+        
+        /// <summary>
+        /// lblSeleccion control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label lblSeleccion;
     }
 }
