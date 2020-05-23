@@ -35,9 +35,9 @@ namespace PokedexDesktop
             {
                 //lista = negocio.listar();
                 lista = negocio.listar2();
-                dgvListadoPokemones.DataSource = lista;
-                dgvListadoPokemones.Columns[0].Visible = false;
-                // dgvListadoPokemones.Columns[4].Visible = false;
+                dgvListadoPOKEMONS.DataSource = lista;
+                dgvListadoPOKEMONS.Columns[0].Visible = false;
+                // dgvListadoPOKEMONS.Columns[4].Visible = false;
 
 
                 // MessageBox.Show(lista[0].Tipo.ToString());
@@ -58,7 +58,7 @@ namespace PokedexDesktop
         private void btnModificar_Click(object sender, EventArgs e)
         {
             Pokemon modificar;
-            modificar = (Pokemon)dgvListadoPokemones.CurrentRow.DataBoundItem;
+            modificar = (Pokemon)dgvListadoPOKEMONS.CurrentRow.DataBoundItem;
             frmAltaPokemon frmModificar = new frmAltaPokemon(modificar);
             // frmModificar.Text = "Modificar";
             frmModificar.ShowDialog();
@@ -71,7 +71,7 @@ namespace PokedexDesktop
             PokemonNegocio negocio = new PokemonNegocio();
             try
             {
-                int id = ((Pokemon)dgvListadoPokemones.CurrentRow.DataBoundItem).Id;
+                int id = ((Pokemon)dgvListadoPOKEMONS.CurrentRow.DataBoundItem).Id;
                 negocio.eliminar(id);
                 cargarDatos();
             }
@@ -104,7 +104,7 @@ namespace PokedexDesktop
                 {
                     listaFiltrada = lista.FindAll(k => k.Descripcion.ToLower().Contains(txtBusqueda.Text.ToLower()) || k.Nombre.ToLower().Contains(txtBusqueda.Text.ToLower()) || (k.Evolucion != null ? k.Evolucion.Nombre.ToLower().Contains(txtBusqueda.Text.ToLower()) : k.Nombre.Contains("")));
                 }
-                dgvListadoPokemones.DataSource = listaFiltrada;
+                dgvListadoPOKEMONS.DataSource = listaFiltrada;
 
             }
             catch (Exception ex)

@@ -4,3 +4,9 @@ C:\Users\Max\source\repos\PrimeraApp2019_2\Dominio\obj\Debug\Dominio.csprojAssem
 C:\Users\Max\source\repos\PrimeraApp2019_2\Dominio\obj\Debug\Dominio.csproj.CoreCompileInputs.cache
 C:\Users\Max\source\repos\PrimeraApp2019_2\Dominio\obj\Debug\Dominio.dll
 C:\Users\Max\source\repos\PrimeraApp2019_2\Dominio\obj\Debug\Dominio.pdb
+C:\Users\msarfernandez\source\repos\primera-app-2019-2\Dominio\bin\Debug\Dominio.dll
+C:\Users\msarfernandez\source\repos\primera-app-2019-2\Dominio\bin\Debug\Dominio.pdb
+C:\Users\msarfernandez\source\repos\primera-app-2019-2\Dominio\obj\Debug\Dominio.csprojAssemblyReference.cache
+C:\Users\msarfernandez\source\repos\primera-app-2019-2\Dominio\obj\Debug\Dominio.csproj.CoreCompileInputs.cache
+C:\Users\msarfernandez\source\repos\primera-app-2019-2\Dominio\obj\Debug\Dominio.dll
+C:\Users\msarfernandez\source\repos\primera-app-2019-2\Dominio\obj\Debug\Dominio.pdb

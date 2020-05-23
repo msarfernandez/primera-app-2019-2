@@ -29,25 +29,25 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form1));
-            this.dgvListadoPokemones = new System.Windows.Forms.DataGridView();
+            this.dgvListadoPOKEMONS = new System.Windows.Forms.DataGridView();
             this.btnAgregar = new System.Windows.Forms.Button();
             this.btnModificar = new System.Windows.Forms.Button();
             this.btnEliminar = new System.Windows.Forms.Button();
             this.txtBusqueda = new System.Windows.Forms.TextBox();
             this.btnContar = new System.Windows.Forms.Button();
-            ((System.ComponentModel.ISupportInitialize)(this.dgvListadoPokemones)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvListadoPOKEMONS)).BeginInit();
             this.SuspendLayout();
             // 
-            // dgvListadoPokemones
+            // dgvListadoPOKEMONS
             // 
-            this.dgvListadoPokemones.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvListadoPokemones.EditMode = System.Windows.Forms.DataGridViewEditMode.EditProgrammatically;
-            this.dgvListadoPokemones.Location = new System.Drawing.Point(12, 57);
-            this.dgvListadoPokemones.MultiSelect = false;
-            this.dgvListadoPokemones.Name = "dgvListadoPokemones";
-            this.dgvListadoPokemones.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgvListadoPokemones.Size = new System.Drawing.Size(495, 150);
-            this.dgvListadoPokemones.TabIndex = 0;
+            this.dgvListadoPOKEMONS.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvListadoPOKEMONS.EditMode = System.Windows.Forms.DataGridViewEditMode.EditProgrammatically;
+            this.dgvListadoPOKEMONS.Location = new System.Drawing.Point(12, 57);
+            this.dgvListadoPOKEMONS.MultiSelect = false;
+            this.dgvListadoPOKEMONS.Name = "dgvListadoPOKEMONS";
+            this.dgvListadoPOKEMONS.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.dgvListadoPOKEMONS.Size = new System.Drawing.Size(495, 150);
+            this.dgvListadoPOKEMONS.TabIndex = 0;
             // 
             // btnAgregar
             // 
@@ -109,12 +109,12 @@
             this.Controls.Add(this.btnEliminar);
             this.Controls.Add(this.btnModificar);
             this.Controls.Add(this.btnAgregar);
-            this.Controls.Add(this.dgvListadoPokemones);
+            this.Controls.Add(this.dgvListadoPOKEMONS);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "Form1";
             this.Text = "Pokedex";
             this.Load += new System.EventHandler(this.Form1_Load);
-            ((System.ComponentModel.ISupportInitialize)(this.dgvListadoPokemones)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvListadoPOKEMONS)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -122,7 +122,7 @@
 
         #endregion
 
-        private System.Windows.Forms.DataGridView dgvListadoPokemones;
+        private System.Windows.Forms.DataGridView dgvListadoPOKEMONS;
         private System.Windows.Forms.Button btnAgregar;
         private System.Windows.Forms.Button btnModificar;
         private System.Windows.Forms.Button btnEliminar;

@@ -7,11 +7,13 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace PokedexWebDesdeCero {
-    
-    
-    public partial class ListaPokemon {
-        
+namespace PokedexWebDesdeCero
+{
+
+
+    public partial class ListaPokemon
+    {
+
         /// <summary>
         /// txtNumeroPokemon control.
         /// </summary>
@@ -20,7 +22,7 @@ namespace PokedexWebDesdeCero {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.TextBox txtNumeroPokemon;
-        
+
         /// <summary>
         /// cboPokemons control.
         /// </summary>
@@ -29,14 +31,23 @@ namespace PokedexWebDesdeCero {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.DropDownList cboPokemons;
-        
+
         /// <summary>
-        /// repetidor control.
+        /// dgvPokemons control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Repeater repetidor;
+        protected global::System.Web.UI.WebControls.GridView dgvPokemons;
+
+        /// <summary>
+        /// txtNavegar control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Button txtNavegar;
     }
 }

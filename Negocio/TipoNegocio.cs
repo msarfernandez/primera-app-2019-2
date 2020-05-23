@@ -19,7 +19,7 @@ namespace Negocio
             List<Tipo> lista = new List<Tipo>();
             try
             {
-                cn.ConnectionString = "data source=MAX-PC\\SQLEXPRESS ; initial catalog=POKEDEX_DB; integrated security=sspi";
+                cn.ConnectionString = "data source=MAXIMILIANO8285\\SQLEXPRESS ; initial catalog=POKEMON_DB; integrated security=sspi";
                 cm.CommandType = System.Data.CommandType.Text;
                 cm.CommandText = "Select Id, Descripcion From TIPOS";
                 cm.Connection = cn;

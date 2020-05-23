@@ -21,11 +21,11 @@ namespace Negocio
 
             try
             {
-                conexion.ConnectionString = "data source=MAX-PC\\SQLEXPRESS; initial catalog=POKEDEX_DB; integrated security=sspi";
+                conexion.ConnectionString = "data source=MAXIMILIANO8285\\SQLEXPRESS; initial catalog=POKEMON_DB; integrated security=sspi";
                 comando.CommandType = System.Data.CommandType.Text;
-                //comando.CommandText = "select p.id, p.Nombre, p.Descripcion PokeDesc, t.Id idTipo, t.Descripcion from POKEMONES p, TIPOS t where p.IdTipo = t.Id";
-                // comando.CommandText = "select p.id, p.Nombre, p.Descripcion PokeDesc, t.Id idTipo, t.Descripcion, e.id idEvol,e.Nombre nomEvol from POKEMONES p, TIPOS t, POKEMONES E where p.IdTipo = t.Id and p.IdEvolucion = E.Id";
-                comando.CommandText = "select p.id, p.Nombre, p.Descripcion PokeDesc, t.Id idTipo, t.Descripcion, e.id idEvol,e.Nombre nomEvol, p.UrlImagen from POKEMONES p inner join TIPOS t on p.IdTipo = t.Id left join POKEMONES E on p.IdEvolucion = E.Id";
+                //comando.CommandText = "select p.id, p.Nombre, p.Descripcion PokeDesc, t.Id idTipo, t.Descripcion from POKEMONS p, TIPOS t where p.IdTipo = t.Id";
+                // comando.CommandText = "select p.id, p.Nombre, p.Descripcion PokeDesc, t.Id idTipo, t.Descripcion, e.id idEvol,e.Nombre nomEvol from POKEMONS p, TIPOS t, POKEMONS E where p.IdTipo = t.Id and p.IdEvolucion = E.Id";
+                comando.CommandText = "select p.id, p.Nombre, p.Descripcion PokeDesc, t.Id idTipo, t.Descripcion, e.id idEvol,e.Nombre nomEvol, p.Imagen from POKEMONS p inner join TIPOS t on p.IdTipo = t.Id left join POKEMONS E on p.IdEvolucion = E.Id";
                 comando.Connection = conexion;
 
                 conexion.Open();
@@ -46,7 +46,7 @@ namespace Negocio
                         aux.Evolucion.Id = (int)lector["idEvol"];
                         aux.Evolucion.Nombre = lector["nomEvol"].ToString();
                     }
-                    aux.UrlImagen = (string)lector["UrlImagen"];
+                    aux.UrlImagen = (string)lector["Imagen"];
                    
                     lista.Add(aux);
                 }
@@ -69,7 +69,7 @@ namespace Negocio
             AccesoDatos datos = new AccesoDatos();
             try
             {
-                datos.setearQuery("delete from POKEMONES where id =" + id);
+                datos.setearQuery("delete from POKEMONS where id =" + id);
                 datos.ejecutarAccion();
             }
             catch (Exception ex)
@@ -85,10 +85,10 @@ namespace Negocio
 
             try
             {
-                conexion.ConnectionString = "data source=MAX-PC\\SQLEXPRESS; initial catalog=POKEDEX_DB; integrated security=sspi";
+                conexion.ConnectionString = "data source=MAXIMILIANO8285\\SQLEXPRESS; initial catalog=POKEMON_DB; integrated security=sspi";
                 comando.CommandType = System.Data.CommandType.Text;
                 comando.Connection = conexion;
-                comando.CommandText = "Insert into POKEMONES values ('" + pokemon.Nombre + "', @idTipo, @idEvolucion, @Desc)";
+                comando.CommandText = "Insert into POKEMONS values ('" + pokemon.Nombre + "', @idTipo, @idEvolucion, @Desc)";
                 comando.Parameters.Clear();
                 comando.Parameters.AddWithValue("@idTipo", pokemon.Tipo.Id);
                 comando.Parameters.AddWithValue("@idEvolucion", pokemon.Evolucion.Id);
@@ -114,7 +114,7 @@ namespace Negocio
             AccesoDatos datos = new AccesoDatos();
             try
             {
-                datos.setearQuery("Update POKEMONES set Nombre=@Nombre Where Id=@Id");
+                datos.setearQuery("Update POKEMONS set Nombre=@Nombre Where Id=@Id");
                 datos.agregarParametro("@Nombre", pokemon.Nombre);
                 datos.agregarParametro("@Id", pokemon.Id);
 
@@ -134,7 +134,7 @@ namespace Negocio
             AccesoDatos datos = new AccesoDatos();
             try
             {
-                datos.setearQuery("select p.id, p.Nombre, p.Descripcion PokeDesc, t.Id idTipo, t.Descripcion, e.id idEvol,e.Nombre nomEvol from POKEMONES p inner join TIPOS t on p.IdTipo = t.Id left join POKEMONES E on p.IdEvolucion = E.Id");
+                datos.setearQuery("select p.id, p.Nombre, p.Descripcion PokeDesc, t.Id idTipo, t.Descripcion, e.id idEvol,e.Nombre nomEvol from POKEMONS p inner join TIPOS t on p.IdTipo = t.Id left join POKEMONS E on p.IdEvolucion = E.Id");
                 datos.ejecutarLector();
                 while (datos.lector.Read())
                 {

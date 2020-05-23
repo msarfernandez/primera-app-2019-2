@@ -15,7 +15,7 @@ namespace Negocio
 
         public AccesoDatos()
         {
-            conexion = new SqlConnection("data source=MAX-PC\\SQLEXPRESS; initial catalog=POKEDEX_DB; integrated security=sspi");
+            conexion = new SqlConnection("data source=MAXIMILIANO8285\\SQLEXPRESS; initial catalog=POKEMON_DB; integrated security=sspi");
             comando = new SqlCommand();
             comando.Connection = conexion;
         }

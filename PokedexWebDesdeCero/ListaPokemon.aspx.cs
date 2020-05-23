@@ -19,22 +19,24 @@ namespace PokedexWebDesdeCero
             {
                 PokemonNegocio negocio = new PokemonNegocio();
                 listaPokemons = negocio.listar();
-                //dgvPokemones.DataSource = negocio.listar();
-                //dgvPokemones.DataBind();
+                dgvPokemons.DataSource = listaPokemons;
+                dgvPokemons.DataBind();
 
-                //cboPokemons.DataSource = listaPokemons;
-                //cboPokemons.DataBind();
+                cboPokemons.DataSource = listaPokemons;
+                cboPokemons.DataBind();
+
+                //cboPokemons.Items.Add("Rojo");
+                //cboPokemons.Items.Add("Azul");
+                //cboPokemons.Items.Add("Verde");
 
                 if (!IsPostBack)
                 { //pregunto si es la primera carga de la page
                     txtNumeroPokemon.Text = "150";
-                    cboPokemons.Items.Add("Rojo");
-                    cboPokemons.Items.Add("Azul");
-                    cboPokemons.Items.Add("Verde");
+                    
 
                     //esto es lo que necesitamos para el repeater.
-                    repetidor.DataSource = listaPokemons;
-                    repetidor.DataBind();
+                    //repetidor.DataSource = listaPokemons;
+                    //repetidor.DataBind();
                 }
 
             }
@@ -93,6 +95,12 @@ namespace PokedexWebDesdeCero
             // El repeater es un simple tag que va en el aspx y dentro del mismo tiene un itemtemplate en el cual
             // se escribe lo que queremos que se repita. 
             var argument = ((Button)sender).CommandArgument;
+        }
+
+        protected void dgvPokemons_RowCommand(object sender, GridViewCommandEventArgs e)
+        {
+            int index = Convert.ToInt32(e.CommandArgument);
+            string idPoke = dgvPokemons.Rows[index].Cells[1].Text;
         }
     }
 }
