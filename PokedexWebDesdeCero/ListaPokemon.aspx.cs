@@ -22,6 +22,8 @@ namespace PokedexWebDesdeCero
                 dgvPokemons.DataSource = listaPokemons;
                 dgvPokemons.DataBind();
 
+                Session[Session.SessionID + "listaPokemons"] = listaPokemons;
+
                 cboPokemons.DataSource = listaPokemons;
                 cboPokemons.DataBind();
 

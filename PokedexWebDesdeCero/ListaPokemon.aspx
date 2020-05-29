@@ -12,17 +12,18 @@
         <%-- ESTO funciona perfecto, pero lo cambiamos por el repeater para poder usar el 
             pasaje de parámetros con el CommandArgument de un botón (el PRUEBA), ya que de ESTE modo, 
             no toma el valor. --%>
-        <%--        <% foreach (var item in listaPokemons)
+        <% foreach (var item in listaPokemons)
             { %>
-         <div class="card" style="width: 18rem;">
+        <div class="card" style="width: 18rem;">
             <img src="<% = item.UrlImagen %>" class="card-img-top" alt="...">
             <div class="card-body">
                 <h5 class="card-title"><% = item.Nombre %></h5>
                 <p class="card-text"><% = item.Descripcion %></p>
                 <a href="PokemonDetail.aspx?idpkm=<% = item.Id.ToString() %>" class="btn btn-primary">Seleccionar</a>
+                <a href="Favoritos.aspx?idpkm=<% = item.Id.ToString() %>" class="btn btn-primary">Fav</a>
             </div>
         </div>
-        <% } %>--%>
+        <% } %>
 
 
 
@@ -62,14 +63,14 @@
         Un par de vueltas? Si... asi es la vida... jaja. Mas adelante cuando usen cosas mas sofisticadas QUIZAS, QUIZASSS estos temas
         sean mas sencillos de resolver... pero seguro habran otros.--%>
     <style>
-        .oculto{
-            display:none;
+        .oculto {
+            display: none;
         }
     </style>
 
     <asp:GridView CssClass="table" ID="dgvPokemons" runat="server" AutoGenerateColumns="false" OnSelectedIndexChanged="dgvPokemones_SelectedIndexChanged" OnRowCommand="dgvPokemons_RowCommand">
         <Columns>
-            <asp:ButtonField HeaderText="Opcion" ButtonType="Link" Text="Seleccionar" CommandName="Select"/>
+            <asp:ButtonField HeaderText="Opcion" ButtonType="Link" Text="Seleccionar" CommandName="Select" />
             <asp:BoundField HeaderText="Id" DataField="Id" ItemStyle-CssClass="oculto" HeaderStyle-CssClass="oculto" />
             <asp:BoundField HeaderText="PokeNombre" DataField="Nombre" />
             <asp:BoundField HeaderText="Caracteristicas" DataField="Descripcion" />
