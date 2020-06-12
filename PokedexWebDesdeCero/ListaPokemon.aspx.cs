@@ -18,7 +18,7 @@ namespace PokedexWebDesdeCero
             try
             {
                 PokemonNegocio negocio = new PokemonNegocio();
-                listaPokemons = negocio.listar();
+                listaPokemons = negocio.listarConView();
                 dgvPokemons.DataSource = listaPokemons;
                 dgvPokemons.DataBind();
 

@@ -90,7 +90,7 @@ namespace PokedexDesktop
                 if(pokemon.Id != 0)
                     pokemonNegocio.modificar(pokemon);
                 else
-                    pokemonNegocio.agregar(pokemon);
+                    pokemonNegocio.agregarConSP(pokemon);
 
                 Dispose();
                 

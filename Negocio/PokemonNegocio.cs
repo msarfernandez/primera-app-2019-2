@@ -78,6 +78,21 @@ namespace Negocio
             }
         }
 
+        public void eliminarLogico(int id)
+        {
+            AccesoDatos datos = new AccesoDatos();
+            try
+            {
+                datos.setearSP("spEliminarLogico");
+                datos.agregarParametro("@id", id);
+                datos.ejecutarAccion();
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+        }
+
         public void agregar(Pokemon pokemon)
         {
             SqlCommand comando = new SqlCommand();
@@ -109,14 +124,49 @@ namespace Negocio
             }
         }
 
+        public void agregarConSP(Pokemon pokemon)
+        {
+            SqlCommand comando = new SqlCommand();
+            SqlConnection conexion = new SqlConnection();
+
+            try
+            {
+                conexion.ConnectionString = "data source=MAXIMILIANO8285\\SQLEXPRESS; initial catalog=POKEMON_DB; integrated security=sspi";
+                comando.CommandType = System.Data.CommandType.StoredProcedure;
+                comando.Connection = conexion;
+                comando.CommandText = "spAltaPokemon";
+                //esto vale, funciona, pero no tiene gracia... 
+                //comando.CommandText = "exec spAltaPokemon " + pokemon.Nombre + ", 1, 1, 'no soy un pokemon... o si?'"
+                comando.Parameters.Clear();
+                comando.Parameters.AddWithValue("@nombre", pokemon.Nombre);
+                comando.Parameters.AddWithValue("@idTipo", pokemon.Tipo.Id);
+                comando.Parameters.AddWithValue("@idEvolucion", pokemon.Evolucion.Id);
+                comando.Parameters.AddWithValue("@desc", pokemon.Descripcion);
+
+                comando.Connection = conexion;
+                conexion.Open();
+                comando.ExecuteNonQuery();
+
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+            finally
+            {
+                conexion.Close();
+            }
+        }
+
         public void modificar(Pokemon pokemon)
         {
             AccesoDatos datos = new AccesoDatos();
             try
             {
-                datos.setearQuery("Update POKEMONS set Nombre=@Nombre Where Id=@Id");
-                datos.agregarParametro("@Nombre", pokemon.Nombre);
-                datos.agregarParametro("@Id", pokemon.Id);
+                //datos.setearQuery("Update POKEMONS set Nombre=@Nombre Where Id=@Id");
+                datos.setearSP("spModificarPokemon");
+                datos.agregarParametro("@nombre", pokemon.Nombre);
+                datos.agregarParametro("@id", pokemon.Id);
 
                 datos.ejecutarAccion();
 
@@ -168,5 +218,50 @@ namespace Negocio
             }
 
         }
+
+        public List<Pokemon> listarConView()
+        {
+            List<Pokemon> lista = new List<Pokemon>();
+            Pokemon aux;
+            AccesoDatos datos = new AccesoDatos();
+            try
+            {
+                datos.setearSP("spListar");
+                datos.ejecutarLector();
+                while (datos.lector.Read())
+                {
+                    aux = new Pokemon();
+                    aux.Id = datos.lector.GetInt32(0);
+                    aux.Nombre = datos.lector.GetString(1);
+                    aux.Descripcion = datos.lector.GetString(2);
+                    aux.Tipo = new Tipo();
+                    aux.Tipo.Id = (int)datos.lector["idTipo"];
+                    aux.Tipo.Descripcion = (string)datos.lector["Descripcion"];
+                    aux.UrlImagen = (string)datos.lector["Imagen"];
+                    if (!Convert.IsDBNull(datos.lector["idEvol"]))
+                    {
+                        aux.Evolucion = new Pokemon();
+                        aux.Evolucion.Id = (int)datos.lector["idEvol"];
+                        aux.Evolucion.Nombre = datos.lector["nomEvol"].ToString();
+                    }
+
+                    lista.Add(aux);
+                }
+
+                return lista;
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+            finally
+            {
+                datos.cerrarConexion();
+                datos = null;
+            }
+
+        }
+
+
     }
 }

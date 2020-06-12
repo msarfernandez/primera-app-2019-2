@@ -1,0 +1,49 @@
+﻿
+use POKEMON_DB
+go
+
+alter table POKEMONS
+add Activo bit
+
+go
+
+update POKEMONS set Activo = 1
+
+go
+
+
+ create procedure spModificarPokemon
+ @nombre varchar(100),
+ @id int
+ as
+ Update POKEMONS set Nombre=@nombre Where Id=@id
+
+ go
+
+ create procedure [dbo].[spAltaPokemon] 
+@nombre varchar(100),
+@idTipo int,
+@idEvolucion int,
+@desc varchar(300)
+as
+Insert into POKEMONS values (@nombre, 0, @idEvolucion, @desc,'',@idTipo,0, 1 )
+
+go
+
+ create procedure [dbo].[spEliminarLogico]
+ @id int
+ as
+ update POKEMONS set activo = 0 where id = @id
+
+ go
+
+
+ create procedure [dbo].[spListar] as
+select p.id, p.Nombre, p.Descripcion PokeDesc, t.Id idTipo, t.Descripcion, 
+e.id idEvol,e.Nombre nomEvol, p.Imagen 
+from POKEMONS p 
+inner join TIPOS t on p.IdTipo = t.Id 
+left join POKEMONS E on p.IdEvolucion = E.Id
+
+where p.activo = 1
+

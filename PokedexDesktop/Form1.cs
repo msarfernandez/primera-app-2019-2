@@ -34,7 +34,7 @@ namespace PokedexDesktop
             try
             {
                 //lista = negocio.listar();
-                lista = negocio.listar2();
+                lista = negocio.listarConView();
                 dgvListadoPOKEMONS.DataSource = lista;
                 dgvListadoPOKEMONS.Columns[0].Visible = false;
                 // dgvListadoPOKEMONS.Columns[4].Visible = false;
@@ -72,7 +72,7 @@ namespace PokedexDesktop
             try
             {
                 int id = ((Pokemon)dgvListadoPOKEMONS.CurrentRow.DataBoundItem).Id;
-                negocio.eliminar(id);
+                negocio.eliminarLogico(id);
                 cargarDatos();
             }
             catch (Exception ex)

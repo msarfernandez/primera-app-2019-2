@@ -28,7 +28,8 @@ namespace Negocio
 
         public void setearSP(string sp)
         {
-
+            comando.CommandType = System.Data.CommandType.StoredProcedure;
+            comando.CommandText = sp;
         }
 
         public void agregarParametro(string nombre, object valor)
