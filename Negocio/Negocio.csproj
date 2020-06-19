@@ -45,6 +45,7 @@
     <Compile Include="PokemonNegocio.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="TipoNegocio.cs" />
+    <Compile Include="UsuarioNegocio.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\Dominio\Dominio.csproj">
@@ -55,6 +56,7 @@
   <ItemGroup>
     <Content Include="scriptDB\modificacionesDB.txt" />
     <Content Include="scriptDB\POKEDEX_DB.sql" />
+    <Content Include="scriptDB\tablaUsuarios.txt" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

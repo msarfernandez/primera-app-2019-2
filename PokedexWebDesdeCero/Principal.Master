@@ -40,6 +40,7 @@
         <div>
             <%--<a class="nav-link" runat="server" href="~/Index">Index</a>--%>
             <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
+
             </asp:ContentPlaceHolder>
         </div>
     </form>

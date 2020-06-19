@@ -68,12 +68,15 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="Default.aspx" />
+    <Content Include="EjemploConMP.aspx" />
+    <Content Include="EjemploSinMP.aspx" />
     <Content Include="Error.aspx" />
     <Content Include="Favoritos.aspx" />
     <Content Include="FormularioPokemon2.aspx" />
     <Content Include="Global.asax" />
     <Content Include="Index.aspx" />
     <Content Include="ListaPokemon.aspx" />
+    <Content Include="Login.aspx" />
     <Content Include="PokemonDetail.aspx" />
     <Content Include="PokemonForm.aspx" />
     <Content Include="Web.config" />
@@ -85,6 +88,20 @@
     </Compile>
     <Compile Include="Default.aspx.designer.cs">
       <DependentUpon>Default.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="EjemploConMP.aspx.cs">
+      <DependentUpon>EjemploConMP.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="EjemploConMP.aspx.designer.cs">
+      <DependentUpon>EjemploConMP.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="EjemploSinMP.aspx.cs">
+      <DependentUpon>EjemploSinMP.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="EjemploSinMP.aspx.designer.cs">
+      <DependentUpon>EjemploSinMP.aspx</DependentUpon>
     </Compile>
     <Compile Include="Error.aspx.cs">
       <DependentUpon>Error.aspx</DependentUpon>
@@ -124,6 +141,20 @@
     <Compile Include="ListaPokemon.aspx.designer.cs">
       <DependentUpon>ListaPokemon.aspx</DependentUpon>
     </Compile>
+    <Compile Include="Login.aspx.cs">
+      <DependentUpon>Login.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Login.aspx.designer.cs">
+      <DependentUpon>Login.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="MaterPage2.Master.cs">
+      <DependentUpon>MaterPage2.Master</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="MaterPage2.Master.designer.cs">
+      <DependentUpon>MaterPage2.Master</DependentUpon>
+    </Compile>
     <Compile Include="PokemonDetail.aspx.cs">
       <DependentUpon>PokemonDetail.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -148,6 +179,7 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="MaterPage2.Master" />
     <None Include="packages.config" />
     <Content Include="Principal.Master" />
     <None Include="Web.Debug.config">

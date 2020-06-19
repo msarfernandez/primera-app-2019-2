@@ -26,8 +26,6 @@
         <% } %>
 
 
-
-
         <%-- Esto reemplaza el foreach. Vean que cambia la forma de pasar el argumento a cada tag.
             En este caso se usa el numeral (#) y la función Eval que recibe por parámetro como string
             el nombre de la property de tu objeto. El repeater va a iterar lo que esté dentro de la colección

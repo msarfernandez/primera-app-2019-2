@@ -17,6 +17,20 @@ namespace PokedexWebDesdeCero
         {
             try
             {
+
+                Usuario usuario = (Usuario)Session["usersession"];
+                if (usuario == null)
+                    Response.Redirect("Login.aspx");
+
+                //if(usuario.tipo.pantallas.contains("ListaPokemon")
+                if (!usuario.Nombre.ToLower().Contains("admin"))
+                {
+                    Session["Error" + Session.SessionID] = "El perfil"+ usuario.Nombre +" no tiene permiso para acceder a esta pagina.";
+                    Response.Redirect("Error.aspx");
+
+                }
+
+
                 PokemonNegocio negocio = new PokemonNegocio();
                 listaPokemons = negocio.listarConView();
                 dgvPokemons.DataSource = listaPokemons;
