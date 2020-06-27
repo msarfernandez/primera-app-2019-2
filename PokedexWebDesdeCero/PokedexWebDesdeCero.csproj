@@ -68,6 +68,7 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="Default.aspx" />
+    <Content Include="DropDowns.aspx" />
     <Content Include="EjemploConMP.aspx" />
     <Content Include="EjemploSinMP.aspx" />
     <Content Include="Error.aspx" />
@@ -79,6 +80,7 @@
     <Content Include="Login.aspx" />
     <Content Include="PokemonDetail.aspx" />
     <Content Include="PokemonForm.aspx" />
+    <Content Include="SubirImagen.aspx" />
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
@@ -88,6 +90,13 @@
     </Compile>
     <Compile Include="Default.aspx.designer.cs">
       <DependentUpon>Default.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="DropDowns.aspx.cs">
+      <DependentUpon>DropDowns.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="DropDowns.aspx.designer.cs">
+      <DependentUpon>DropDowns.aspx</DependentUpon>
     </Compile>
     <Compile Include="EjemploConMP.aspx.cs">
       <DependentUpon>EjemploConMP.aspx</DependentUpon>
@@ -177,6 +186,13 @@
       <DependentUpon>Principal.Master</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="SubirImagen.aspx.cs">
+      <DependentUpon>SubirImagen.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="SubirImagen.aspx.designer.cs">
+      <DependentUpon>SubirImagen.aspx</DependentUpon>
+    </Compile>
   </ItemGroup>
   <ItemGroup>
     <Content Include="MaterPage2.Master" />
@@ -191,6 +207,7 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
+    <Folder Include="Images\" />
     <Folder Include="Models\" />
   </ItemGroup>
   <ItemGroup>
